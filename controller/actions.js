@@ -25,7 +25,20 @@ const getById = (req, res) => {
   if (blogDisplay) {
     sendResponse(200, "Successful", [blogDisplay], req, res);
   } else {
-    sendError(new AppError(404, "Not Found", "task not available"), req, res);
+    sendError(new AppError(404, "Not Found", "blog not available"), req, res);
   }
 };
-module.exports = { getAllBlogs, getById };
+//create blog
+const createBlog = (req, res) => {};
+//delete by id
+const deleteById = (req, res) => {
+  const deleteBlog = blogs.splice((blog) => {
+    return blog.id == req.params.id;
+  });
+  if (deleteBlog) {
+    sendResponse(200, "Successful", [deleteBlog], req, res);
+  } else {
+    sendError(new AppError(404, "Not Found", "blog not available"), req, res);
+  }
+};
+module.exports = { getAllBlogs, getById, createBlog, deleteById };
