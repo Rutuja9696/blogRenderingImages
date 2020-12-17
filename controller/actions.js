@@ -32,11 +32,10 @@ const getById = (req, res) => {
 const createBlog = (req, res) => {};
 //delete by id
 const deleteById = (req, res) => {
-  const deleteBlog = blogs.splice((blog) => {
-    return blog.id == req.params.id;
-  });
-  if (deleteBlog) {
-    sendResponse(200, "Successful", [deleteBlog], req, res);
+  const index = blogs.indexOf(blogs.id == req.params.id);
+  blogs.splice(index, 1);
+  if (index) {
+    sendResponse(200, "Successful", [index], req, res);
   } else {
     sendError(new AppError(404, "Not Found", "blog not available"), req, res);
   }
