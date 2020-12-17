@@ -1,0 +1,30 @@
+{
+  "name": "03-blogrenderingimages",
+  "version": "1.0.0",
+  "description": "Rendering images using multer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rutuja9696/blogRenderingImages.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "multer",
+    "javascript"
+  ],
+  "author": "Rutuja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rutuja9696/blogRenderingImages/issues"
+  },
+  "homepage": "https://github.com/Rutuja9696/blogRenderingImages#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1"
+  }
+}
