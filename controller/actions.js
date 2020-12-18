@@ -31,9 +31,9 @@ const getById = (req, res) => {
 };
 //create blog
 const createBlog = (req, res) => {
-  // console.log(req.body);
-
+  //creating path for image
   const imagePath = path.join(__dirname, "..", req.file.path);
+  //creating new blog
   let newBlog = new Blog(
     req.body.author,
     req.body.title,
@@ -42,6 +42,7 @@ const createBlog = (req, res) => {
     imagePath
   );
   blogs.push(newBlog);
+  //writing output
   fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
     if (err) {
       sendErrorMessage(
@@ -56,8 +57,10 @@ const createBlog = (req, res) => {
 };
 //delete by id
 const deleteById = (req, res) => {
+  //state index of element to be deleted
   const index = blogs.indexOf(blogs.id == req.params.id);
   if (index) {
+    //delete and write
     blogs.splice(index, 1);
     fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
       sendResponse(200, "Successful", [], req, res);
@@ -66,4 +69,5 @@ const deleteById = (req, res) => {
     sendError(new AppError(404, "Not Found", "Blog not available"), req, res);
   }
 };
+//exporting controller functions
 module.exports = { getAllBlogs, getById, createBlog, deleteById };
