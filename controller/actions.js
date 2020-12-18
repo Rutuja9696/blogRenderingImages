@@ -25,7 +25,7 @@ const getById = (req, res) => {
   if (blogDisplay) {
     sendResponse(200, "Successful", [blogDisplay], req, res);
   } else {
-    sendError(new AppError(404, "Not Found", "blog not available"), req, res);
+    sendError(new AppError(404, "Not Found", "Blog not available"), req, res);
   }
 };
 //create blog
@@ -37,7 +37,7 @@ const deleteById = (req, res) => {
   if (index) {
     sendResponse(200, "Successful", [index], req, res);
   } else {
-    sendError(new AppError(404, "Not Found", "blog not available"), req, res);
+    sendError(new AppError(404, "Not Found", "Blog not available"), req, res);
   }
 };
 module.exports = { getAllBlogs, getById, createBlog, deleteById };
