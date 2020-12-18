@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const AppError = require("../helpers/appErrorClass");
+const Blog = require("../models/blogs");
 const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 const fileName = path.join(__dirname, "..", "data", "data.json");
@@ -29,13 +30,38 @@ const getById = (req, res) => {
   }
 };
 //create blog
-const createBlog = (req, res) => {};
+const createBlog = (req, res) => {
+  // console.log(req.body);
+
+  const imagePath = path.join(__dirname, "..", req.file.path);
+  let newBlog = new Blog(
+    req.body.author,
+    req.body.title,
+    req.body.content,
+    req.body.links,
+    imagePath
+  );
+  blogs.push(newBlog);
+  fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
+    if (err) {
+      sendErrorMessage(
+        new AppError(500, "Internal Error", "Error in completing Request"),
+        req,
+        res
+      );
+      return err;
+    }
+    sendResponse(201, "Successful", newBlog, req, res);
+  });
+};
 //delete by id
 const deleteById = (req, res) => {
   const index = blogs.indexOf(blogs.id == req.params.id);
-  blogs.splice(index, 1);
   if (index) {
-    sendResponse(200, "Successful", [index], req, res);
+    blogs.splice(index, 1);
+    fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
+      sendResponse(200, "Successful", [], req, res);
+    });
   } else {
     sendError(new AppError(404, "Not Found", "Blog not available"), req, res);
   }
