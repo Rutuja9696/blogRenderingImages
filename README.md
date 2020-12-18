@@ -45,6 +45,6 @@ steps to view output:\
 # 6.DEMO:
 
 refer the heroko link to view the demo :\
-1.to view all blogs(link:https://blog-rendering1.herokuapp.com/blogs)\
-2.to view blog by id(link:https://blog-rendering1.herokuapp.com/blogs/< id of blog that is to be fetched>)\
-3.to view by query parameter (link:https://blog-rendering1.herokuapp.com/blogs/?id=< parameter of blog that is to be fetched>)\
+1.to view all blogs(link:https://blogrenderingimages.herokuapp.com/blogs)\
+2.to view blog by id(link:https://blogrenderingimages.herokuapp.com/blogs/< id of blog that is to be fetched>)\
+3.to view by query parameter (link:https://blogrenderingimages.herokuapp.com/blogs/?id=< parameter of blog that is to be fetched>)\
