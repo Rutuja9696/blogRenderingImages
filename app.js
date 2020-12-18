@@ -5,8 +5,8 @@ const blogRouter = require("./routes/blogRoutes");
 const { config } = require("process");
 const app = express();
 //multer
-const multer = require("multer");
-const path = require("path");
+// const multer = require("multer");
+// const path = require("path");
 //express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
