@@ -28,6 +28,7 @@ a.controller:\
 -express
 -dotenv
 -multer
+-uniqid
 
 # OUTPUT:
 
