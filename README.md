@@ -1,14 +1,14 @@
 # blogRenderingImages
 
-# 1.TITLE:\
+# 1.TITLE:
 
 Blog rendering with images-backed
 
-# 2.DESCRIPTION: \
+# 2.DESCRIPTION:
 
 This aims to create backend for the blogs.This project is done using express server.Output is viewed on Postman.
 
-# 3.FILE DETAILS:\
+# 3.FILE DETAILS:
 
 a.controller:\
  This file contains all the functions of actions that can be performed.Here ,it includes the controller to fetch all the blogs ,fetch blogs by id and fetch blogs blogs by query parameters.\
@@ -29,7 +29,7 @@ a.controller:\
 -dotenv
 -multer
 
-# OUTPUT:\
+# OUTPUT:
 
 steps to view output:\
 1.Install postman.\
@@ -41,7 +41,7 @@ steps to view output:\
 7.Add request (post) to create blog(url:)\
 8.Add request (delete) to delete-blog-by-id(url:< id of blog that is to be deleted>) \)
 
-# DEMO:\
+# DEMO:
 
 refer the heroko link to view the demo :\
 1.to view all blogs(link:https://blog-rendering1.herokuapp.com/blogs)\
